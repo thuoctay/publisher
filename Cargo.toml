@@ -1,0 +1,40 @@
+[package]
+name = "rust-polling"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.36.0", features = ["full"] }
+
+#postgres
+sqlx = { version = "0.8.5", features = ["runtime-tokio", "tls-native-tls", "postgres", "macros", "chrono"] }
+
+#serde
+serde = { version = "1.0.197", features = ["derive"] }
+serde_json = "1.0.114"
+
+#env
+dotenvy = "0.15.7"
+
+anyhow = "1.0.80"
+thiserror = "1.0"
+
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+
+redis = { version = "0.24.0", features = ["tokio-comp"] }
+
+chrono = { version = "0.4.34", features = ["serde"] }
+
+# Utilities
+hex = "0.4.3"
+async-trait = "0.1"
+
+# Blockchain
+alloy = { version = "1.0", features = ["full"] }
+
+# Web framework
+axum = "0.8"
+
+[dev-dependencies]
+tokio-test = "0.4"
